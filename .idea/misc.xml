@@ -4,13 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/radcustom.xml" value="0.140625" />
+        <entry key="app/src/main/res/drawable/round_pink_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/round_red_button.xml" value="0.140625" />
         <entry key="app/src/main/res/drawable/round_white_button.xml" value="0.140625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24643022524745672" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.10945273631840796" />
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.25076452599388377" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.12447916666666667" />
-        <entry key="app/src/main/res/layout/item.xml" value="0.11141304347826086" />
+        <entry key="app/src/main/res/layout/item.xml" value="0.5607734806629834" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.24583333333333332" />
       </map>
     </option>

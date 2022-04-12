@@ -1,6 +1,7 @@
 package com.example.testtask.ui.home;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.testtask.R;
 
 
@@ -24,8 +26,10 @@ import java.util.ListIterator;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     List<Post> postList;
+    Context context;
 
-    public RecyclerViewAdapter() {
+    public RecyclerViewAdapter(Context contextArg) {
+        this.context=contextArg;
         this.postList = new List<Post>() {
             @Override
             public int size() {
@@ -166,7 +170,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         viewHolder.txtView_title.setText(post.getTitle());
         viewHolder.txtView_description.setText(post.getDescription());
-       // viewHolder.buttBuy.setText(post.getCost().toS);
+       viewHolder.buttBuy.setText("от "+post.getCost()+" руб");
+        Glide.with(context).load(post.getImage()).into(viewHolder.imgView);
     }
 
     @Override

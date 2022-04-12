@@ -1,12 +1,14 @@
 package com.example.testtask.ui.home;
 
 import android.app.Application;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.android.volley.NetworkResponse;
 
@@ -16,27 +18,38 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeViewModel extends ViewModel {
+public class HomeViewModel extends AndroidViewModel {
 
     MutableLiveData<List<Post>> postLiveData;
     List<Post> postList;;
+    private HomeRepository repository;
 
-    public HomeViewModel() {
+
+
+
+    public HomeViewModel(@NonNull Application application) {
+        super(application);
         postLiveData = new MutableLiveData<>();
-
+        repository = new HomeRepository(getApplication());
         // call your Rest API in init method
         init();
     }
+
 
     public MutableLiveData<List<Post>> getUserMutableLiveData(){
         return postLiveData;
     }
 
     public void init(){
-        populateList();
+        //populateList();
+        getData();
 
     }
+    public void getData()
+    {
+        postLiveData=repository.getDataFromNetwork();
 
+    }
     public void populateList(){
         NetworkService.getInstance()
                 .getJSONApi()

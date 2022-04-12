@@ -4,6 +4,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Post {
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -33,6 +37,23 @@ public class Post {
     @SerializedName("cost")
     @Expose
     private int cost;
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
+
     @SerializedName("image")
     @Expose
     private String image;

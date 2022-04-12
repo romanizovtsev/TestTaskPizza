@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:background="@color/bcolor"
+    >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -64,13 +66,10 @@
                 android:layout_height="112dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:scrollbars="none"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar"
                 app:layout_scrollFlags="scroll|snap">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -106,7 +105,6 @@
                                 android:layout_height="match_parent"
                                 android:adjustViewBounds="true"
                                 android:src="@drawable/banner1" />
-                            <!--YOUR CONTENT-->
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -122,23 +120,19 @@
                                 android:layout_height="match_parent"
                                 android:adjustViewBounds="true"
                                 android:src="@drawable/banner1" />
-                            <!--YOUR CONTENT-->
                         </androidx.cardview.widget.CardView>
 
 
                     </LinearLayout>
-                </LinearLayout>
+
             </HorizontalScrollView>
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
+                android:scrollbars="none"
                 app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -209,7 +203,7 @@
 
                         </RadioGroup>
                     </LinearLayout>
-                </LinearLayout>
+
             </HorizontalScrollView>
 
 
@@ -228,12 +222,13 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="#F5F8FD"
             android:orientation="vertical"
-            android:padding="5dp"
+            android:layout_marginBottom="112dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
