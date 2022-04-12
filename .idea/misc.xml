@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_person.xml" value="0.140625" />
+        <entry key="app/src/main/res/drawable/ic_qr.xml" value="0.140625" />
         <entry key="app/src/main/res/drawable/radcustom.xml" value="0.140625" />
         <entry key="app/src/main/res/drawable/round_pink_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/round_red_button.xml" value="0.140625" />

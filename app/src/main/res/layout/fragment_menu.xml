@@ -135,7 +135,7 @@
 
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
@@ -155,30 +155,35 @@
                                 android:background="@drawable/radcustom"
                                 android:button="@drawable/radcustom"
                                 android:checked="true"
+                                android:textColor="@color/pink2"
+                                android:textStyle="bold"
                                 android:gravity="center"
-                                android:text="Пицца" />
+                                android:text="@string/pizza" />
 
                             <RadioButton
                                 android:id="@+id/radio1"
                                 android:layout_width="88dp"
                                 android:layout_height="32dp"
                                 android:layout_marginEnd="8dp"
+                                android:textColor="@color/grey_text"
+                                android:textStyle="bold"
                                 android:background="@drawable/radcustom"
                                 android:button="@drawable/radcustom"
-
                                 android:gravity="center"
-                                android:text="Комбо" />
+                                android:text="@string/kombo" />
 
                             <RadioButton
                                 android:id="@+id/radio2"
                                 android:layout_width="88dp"
                                 android:layout_height="32dp"
                                 android:layout_marginEnd="8dp"
+                                android:textColor="@color/grey_text"
+                                android:textStyle="bold"
                                 android:background="@drawable/radcustom"
                                 android:button="@drawable/radcustom"
 
                                 android:gravity="center"
-                                android:text="Десерты" />
+                                android:text="@string/cake" />
 
                             <RadioButton
                                 android:id="@+id/radio3"
@@ -186,10 +191,11 @@
                                 android:layout_height="32dp"
                                 android:layout_marginEnd="8dp"
                                 android:background="@drawable/radcustom"
-
+                                android:textColor="@color/grey_text"
+                                android:textStyle="bold"
                                 android:button="@drawable/radcustom"
                                 android:gravity="center"
-                                android:text="Напитки" />
+                                android:text="@string/drinks" />
 
                             <RadioButton
                                 android:id="@+id/radio4"
@@ -197,8 +203,10 @@
                                 android:layout_height="32dp"
                                 android:background="@drawable/radcustom"
                                 android:button="@drawable/radcustom"
+                                android:textColor="@color/grey_text"
+                                android:textStyle="bold"
                                 android:gravity="center"
-                                android:text="Соусы" />
+                                android:text="@string/sauces" />
 
 
                         </RadioGroup>

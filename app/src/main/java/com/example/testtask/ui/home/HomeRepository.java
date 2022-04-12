@@ -65,7 +65,6 @@ public class HomeRepository {
 
                     @Override
                     public void onFailure(@NonNull Call<List<Post>> call, @NonNull Throwable t) {
-                        Log.e("Берем из бд", "Интернет нет");
                         data.setValue(getFromDB());
                         t.printStackTrace();
                     }
@@ -119,9 +118,9 @@ public class HomeRepository {
             Post post = new Post();
             @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex(Data.MenuData.COLUMN_TITLE));
             @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex(Data.MenuData.COLUMN_DESCRIPTION));
-            @SuppressLint("Range") Integer cost = cursor.getInt(cursor.getColumnIndex(Data.MenuData.COLUMN_COST));
+            @SuppressLint("Range") int cost = cursor.getInt(cursor.getColumnIndex(Data.MenuData.COLUMN_COST));
             @SuppressLint("Range") String image = cursor.getString(cursor.getColumnIndex(Data.MenuData.COLUMN_IMAGE));
-            @SuppressLint("Range") Integer category = cursor.getInt(cursor.getColumnIndex(Data.MenuData.COLUMN_CATEGORY));
+            @SuppressLint("Range") int category = cursor.getInt(cursor.getColumnIndex(Data.MenuData.COLUMN_CATEGORY));
             post.setTitle(title);
             post.setDescription(description);
             post.setCost(cost);

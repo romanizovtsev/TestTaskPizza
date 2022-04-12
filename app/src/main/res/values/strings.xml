@@ -4,4 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="Moscow">Москва</string>
+    <string name="cake">Десерты</string>
+    <string name="drinks">Напитки</string>
+    <string name="kombo">Комбо</string>
+    <string name="sauces">Соусы</string>
+    <string name="pizza">Пицца</string>
 </resources>

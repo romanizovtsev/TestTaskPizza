@@ -1,6 +1,5 @@
 package com.example.testtask.ui.home;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.testtask.R;
 
-
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -29,7 +26,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     Context context;
 
     public RecyclerViewAdapter(Context contextArg) {
-        this.context=contextArg;
+        this.context = contextArg;
         this.postList = new List<Post>() {
             @Override
             public int size() {
@@ -158,7 +155,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
+        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
         return new RecyclerViewViewHolder(rootView);
     }
 
@@ -166,11 +163,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         Post post = postList.get(position);
-        RecyclerViewViewHolder viewHolder= (RecyclerViewViewHolder) holder;
+        RecyclerViewViewHolder viewHolder = (RecyclerViewViewHolder) holder;
 
         viewHolder.txtView_title.setText(post.getTitle());
         viewHolder.txtView_description.setText(post.getDescription());
-       viewHolder.buttBuy.setText("от "+post.getCost()+" руб");
+        viewHolder.buttBuy.setText("от " + post.getCost() + " руб");
         Glide.with(context).load(post.getImage()).into(viewHolder.imgView);
     }
 

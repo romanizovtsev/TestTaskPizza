@@ -1,18 +1,15 @@
 package com.example.testtask.ui.home;
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
@@ -20,17 +17,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.example.testtask.R;
 import com.example.testtask.databinding.FragmentMenuBinding;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment implements LifecycleOwner {
 
@@ -38,9 +30,11 @@ public class HomeFragment extends Fragment implements LifecycleOwner {
     private HomeViewModel homeViewModel;
     private FragmentMenuBinding binding;
     Context context;
+    Button b0, b1, b2, b3, b4;
     RecyclerView recyclerView;
     RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<Integer> positionsCategories;
+    final int button0 = R.id.radio0, button1 = R.id.radio1, button2 = R.id.radio2, button3 = R.id.radio3, button4 = R.id.radio4;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -57,37 +51,87 @@ public class HomeFragment extends Fragment implements LifecycleOwner {
         recyclerViewAdapter = new RecyclerViewAdapter(requireActivity());
         recyclerView.setAdapter(recyclerViewAdapter);
         homeViewModel.getUserMutableLiveData().observe(getViewLifecycleOwner(), ListUpdateObserver);
+        b0 = root.findViewById(button0);
+        b1 = root.findViewById(button1);
+        b2 = root.findViewById(button2);
+        b3 = root.findViewById(button3);
+        b4 = root.findViewById(button4);
 
         RadioGroup radioGroup = root.findViewById(R.id.radioGroup1);
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            if(positionsCategories.get(0)!=null) {
-                switch (checkedId) {
-                    case R.id.radio0:
-                        //recyclerView.smoothScrollToPosition(positionsCategories.get(0));
-                        ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(positionsCategories.get(0), 8);
-                        break;
-                    case R.id.radio1:
 
-                        ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(positionsCategories.get(1), 8);
-                        //recyclerView.smoothScrollToPosition(positionsCategories.get(1));
+            switch (checkedId) {
+                case button0:
+                    b0.setTextColor(getResources().getColor(R.color.pink2));
+                    b1.setTextColor(getResources().getColor(R.color.grey_text));
+                    b2.setTextColor(getResources().getColor(R.color.grey_text));
+                    b3.setTextColor(getResources().getColor(R.color.grey_text));
+                    b4.setTextColor(getResources().getColor(R.color.grey_text));
+                    //recyclerView.smoothScrollToPosition(positionsCategories.get(0));
+                    try {
+                        ((LinearLayoutManager) Objects.requireNonNull(recyclerView.getLayoutManager())).scrollToPositionWithOffset(positionsCategories.get(0), 8);
+                    } catch (Exception e) {
+                        Log.d("smth went", "wrong");
+                    }
 
-                        // give a delay of one second
-                        break;
-                    case R.id.radio2:
-                        // recyclerView.smoothScrollToPosition(positionsCategories.get(2));
-                        ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(positionsCategories.get(2), 8);
-                        break;
-                    case R.id.radio3:
-                        //recyclerView.smoothScrollToPosition(positionsCategories.get(3));
-                        ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(positionsCategories.get(3), 8);
-                        break;
-                    case R.id.radio4:
-                        ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(positionsCategories.get(4), 8);
-                        break;
+                    break;
+                case button1:
+                    b0.setTextColor(getResources().getColor(R.color.grey_text));
+                    b1.setTextColor(getResources().getColor(R.color.pink2));
+                    b2.setTextColor(getResources().getColor(R.color.grey_text));
+                    b3.setTextColor(getResources().getColor(R.color.grey_text));
+                    b4.setTextColor(getResources().getColor(R.color.grey_text));
 
-                    default:
-                        break;
-                }
+                    //recyclerView.smoothScrollToPosition(positionsCategories.get(1));
+                    try {
+                        ((LinearLayoutManager) Objects.requireNonNull(recyclerView.getLayoutManager())).scrollToPositionWithOffset(positionsCategories.get(1), 8);
+                    } catch (Exception e) {
+                        Log.d("smth went", "wrong");
+                    }
+                    break;
+                case button2:
+                    b0.setTextColor(getResources().getColor(R.color.grey_text));
+                    b1.setTextColor(getResources().getColor(R.color.grey_text));
+                    b2.setTextColor(getResources().getColor(R.color.pink2));
+                    b3.setTextColor(getResources().getColor(R.color.grey_text));
+                    b4.setTextColor(getResources().getColor(R.color.grey_text));
+                    // recyclerView.smoothScrollToPosition(positionsCategories.get(2));
+                    try {
+                        ((LinearLayoutManager) Objects.requireNonNull(recyclerView.getLayoutManager())).scrollToPositionWithOffset(positionsCategories.get(2), 8);
+                    } catch (Exception e) {
+                        Log.d("smth went", "wrong");
+                    }
+                    break;
+                case button3:
+                    b0.setTextColor(getResources().getColor(R.color.grey_text));
+                    b1.setTextColor(getResources().getColor(R.color.grey_text));
+                    b2.setTextColor(getResources().getColor(R.color.grey_text));
+                    b3.setTextColor(getResources().getColor(R.color.pink2));
+                    b4.setTextColor(getResources().getColor(R.color.grey_text));
+                    //recyclerView.smoothScrollToPosition(positionsCategories.get(3));
+                    try {
+                        ((LinearLayoutManager) Objects.requireNonNull(recyclerView.getLayoutManager())).scrollToPositionWithOffset(positionsCategories.get(3), 8);
+                    } catch (Exception e) {
+                        Log.d("smth went", "wrong");
+                    }
+                    break;
+                case button4:
+                    b0.setTextColor(getResources().getColor(R.color.grey_text));
+                    b1.setTextColor(getResources().getColor(R.color.grey_text));
+                    b2.setTextColor(getResources().getColor(R.color.grey_text));
+                    b3.setTextColor(getResources().getColor(R.color.grey_text));
+                    b4.setTextColor(getResources().getColor(R.color.pink2));
+                    //recyclerView.smoothScrollToPosition(positionsCategories.get(4));
+                    try {
+                        ((LinearLayoutManager) Objects.requireNonNull(recyclerView.getLayoutManager())).scrollToPositionWithOffset(positionsCategories.get(4), 8);
+                    } catch (Exception e) {
+                        Log.d("smth went", "wrong");
+                    }
+                    break;
+
+                default:
+                    break;
+
             }
         });
 
@@ -122,7 +166,7 @@ public class HomeFragment extends Fragment implements LifecycleOwner {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putIntegerArrayList("array", positionsCategories);
     }
