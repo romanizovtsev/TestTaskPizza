@@ -1,4 +1,4 @@
-package com.example.testtask.ui.home;
+package com.example.testtask.ui.home.mvvm;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testtask.R;
 import com.example.testtask.databinding.FragmentMenuBinding;
+import com.example.testtask.ui.home.network.Post;
+import com.example.testtask.ui.home.mvvm.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

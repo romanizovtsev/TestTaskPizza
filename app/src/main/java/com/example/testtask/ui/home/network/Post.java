@@ -1,4 +1,4 @@
-package com.example.testtask.ui.home;
+package com.example.testtask.ui.home.network;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

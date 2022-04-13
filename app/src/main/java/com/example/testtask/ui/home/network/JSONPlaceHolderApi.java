@@ -1,4 +1,4 @@
-package com.example.testtask.ui.home;
+package com.example.testtask.ui.home.network;
 
 import java.util.List;
 

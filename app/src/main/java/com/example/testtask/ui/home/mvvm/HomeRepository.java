@@ -1,4 +1,4 @@
-package com.example.testtask.ui.home;
+package com.example.testtask.ui.home.mvvm;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -8,9 +8,10 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 
+import com.example.testtask.ui.home.network.NetworkService;
+import com.example.testtask.ui.home.network.Post;
 import com.example.testtask.ui.home.database.Data;
 import com.example.testtask.ui.home.database.DataDbHelper;
 

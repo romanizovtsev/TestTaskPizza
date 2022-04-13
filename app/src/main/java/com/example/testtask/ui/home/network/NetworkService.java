@@ -1,4 +1,4 @@
-package com.example.testtask.ui.home;
+package com.example.testtask.ui.home.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

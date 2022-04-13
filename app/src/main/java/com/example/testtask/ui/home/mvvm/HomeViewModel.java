@@ -1,10 +1,12 @@
-package com.example.testtask.ui.home;
+package com.example.testtask.ui.home.mvvm;
 
 import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
+
+import com.example.testtask.ui.home.network.Post;
 
 import java.util.List;
 
